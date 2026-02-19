@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+    background: linear-gradient(180deg, #0f0f0f, #1c1c1c);
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background: #000 !important;
+    border-bottom: 3px solid rgb(255, 0, 0);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: rgb(207, 215, 207) !important;
+    font-size: 20px;
+}
+
+.navbar-brand img {
+    border-radius: 6px;
+}
+
+.nav-link {
+    color: #fff !important;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: rgb(255, 0, 0) !important;
+}
+
+.navbar-toggler {
+    background: rgb(255, 0, 0);
+}
+
+/* ===== TITULOS ===== */
+h1 {
+    margin-top: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 0px 0px 10px rgb(255, 0, 0);
+}
+
+p {
+    margin-bottom: 30px;
+}
+
+/* ===== CAROUSEL ===== */
+.carousel {
+    width: 90%;
+    margin: auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 0px 25px rgba(255, 0, 0, 0.4);
+}
+
+.carousel-item img {
+    height: 500px;
+    object-fit: cover;
+    filter: brightness(70%);
+    transition: 0.5s;
+}
+
+.carousel-item img:hover {
+    filter: brightness(100%);
+    transform: scale(1.02);
+}
+
+/* BOTÕES DO CAROUSEL */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: red;
+    border-radius: 50%;
+    padding: 15px;
+}
+
+/* INDICADORES */
+.carousel-indicators button {
+    background-color: white;
+}
+
+.carousel-indicators .active {
+    background-color: red;
+}
+
+/* ===== BOTÃO SEARCH ===== */
+.btn-outline-success {
+    border-color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
+.btn-outline-success:hover {
+    background: red;
+    color: white;
+    border-color: red;
+}
+
+/* ===== MODAL ===== */
+.modal-content {
+    background: #111;
+    color: white;
+    border: 2px solid red;
+    border-radius: 15px;
+}
+
+.modal-header {
+    border-bottom: 1px solid red;
+}
+
+.modal-footer {
+    border-top: 1px solid red;
+}
+
+.btn-primary {
+    background: red;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: darkred;
+}
