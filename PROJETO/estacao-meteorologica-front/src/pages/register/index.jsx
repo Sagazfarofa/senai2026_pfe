@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import imgEstacao from "../../assets/estacao.jpg";
-import "./login.css";
+import "../login/login.css";
 
-export default function Login() {
+export default function Register() {
     const [usuario, setUsuario] = useState("");
     const [senha, setSenha] = useState("");
-
+    const [confirmaSenha, setConfirmaSenha] = useState("");
+    
     return (
         <section className="container">
 
@@ -16,30 +17,36 @@ export default function Login() {
 
             <div className="right">
                 <form className="form">
-                    <h2>🌦️ Conecte-se</h2>
+                    <h2>🌦️ Cadastro de Usuário</h2>
 
-                    <label htmlFor="usuario">Usuário</label>
+                    <label>Usuário</label>
                     <input
                         type="text"
-                        id="usuario"
                         value={usuario}
                         onChange={(e) => setUsuario(e.target.value)}
                         placeholder="Digite seu usuário"
                     />
 
-                    <label htmlFor="senha">Senha</label>
+                    <label>Senha</label>
                     <input
                         type="password"
-                        id="senha"
                         value={senha}
                         onChange={(e) => setSenha(e.target.value)}
                         placeholder="Digite sua senha"
                     />
 
-                    <Link to="/dashboard" type="submit" className="btn">Entrar</Link>
+                    <label>Confirmar Senha</label>
+                    <input
+                        type="password"
+                        value={confirmaSenha}
+                        onChange={(e) => setConfirmaSenha(e.target.value)}
+                        placeholder="Confirme a senha"
+                    />
+
+                    <button type="submit">Cadastrar</button>
 
                     <p>
-                        Não tem conta? <Link to="/register">Cadastre-se</Link>
+                        Já tem conta? <Link to="/">Entrar</Link>
                     </p>
                 </form>
             </div>

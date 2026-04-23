@@ -3,107 +3,352 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
-/* layout */
-section {
+/* FUNDO GERAL */
+body {
+  height: 100vh;
+  background: linear-gradient(120deg, #0f2027, #1ba542, #0d7928);
+}
+
+/* CONTAINER */
+.container {
   display: flex;
   height: 100vh;
 }
 
-/* imagem */
-section > div:first-child {
-  flex: 1;
+/* IMAGEM LATERAL */
+.left {
+  flex: 2;
+  position: relative;
+
+  
 }
 
-section img {
+.left img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* lado do form */
-section > div:last-child {
+/* OVERLAY NA IMAGEM */
+.left::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 50, 20, 0.4);
+}
+
+/* FORM LADO DIREITO */
+.right {
   flex: 1;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background: #f1f8f4;
+  justify-content: center;
+  background: #0f2027;
 }
 
-/* card */
-form {
+/* CARD */
+.form {
   width: 100%;
-  max-width: 360px;
-  background: #ffffff;
-  padding: 40px;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  max-width: 380px;
+  padding: 35px;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  color: #fff;
 }
 
-/* título */
-h2 {
+/* TÍTULO */
+.form h2 {
   text-align: center;
-  margin-bottom: 20px;
-  color: #2e7d32;
+  margin-bottom: 25px;
+  font-weight: 600;
 }
 
-/* labels */
-label {
-  display: block;
-  margin-top: 15px;
+/* LABEL */
+.form label {
   font-size: 14px;
-  color: #2e7d32;
+  margin-top: 10px;
+  display: block;
 }
 
-/* inputs */
-input {
+/* INPUT */
+.form input {
   width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border-radius: 8px;
-  border: 1px solid #c8e6c9;
-  outline: none;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  transition: 0.2s;
+}
+
+/* INPUT FOCUS */
+.form input:focus {
+  border-color: #4caf50;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* BOTÃO */
+.form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: linear-gradient(135deg, #43a047, #66bb6a);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+
   transition: 0.3s;
 }
 
-input:focus {
-  border-color: #2e7d32;
-  box-shadow: 0 0 5px rgba(46,125,50,0.4);
+/* HOVER */
+.form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
-/* botão */
-button {
+/* TEXTO */
+.form p {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* LINK */
+.form a {
+  color: #81c784;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left {
+    height: 200px;
+  }
+
+  .right {
+    height: calc(100vh - 200px);
+  }
+}
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2e7d32; /* verde agro 😎 */
+  color: white;
+  text-decoration: none; /* tira o sublinhado do link */
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 15%;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2e7d32;
+  padding: 15px 30px;
+  color: white;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2e7d32;
+  padding: 15px 30px;
+  color: white;
+}
+
+header h2 {
+  font-size: 20px;
+}
+
+header ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+header ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+header ul li a:hover {
+  color: #a5d6a7;
+}
+header h2 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+header ul li a {
+  font-size: 20px;
+}
+
+/* ================= DASHBOARD ================= */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 20px;
+  color: white;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h6 {
+  font-size: 14px;
+  color: #a5d6a7;
+}
+
+.card h2 {
+  font-size: 28px;
+  margin-top: 10px;
+}
+
+/* GRÁFICOS */
+
+.graficos {
+  padding: 30px;
+  color: white;
+}
+
+.graficos h6 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* TABELA */
+
+.tabela {
+  padding: 30px;
+  color: white;
+}
+
+.tabela table {
   width: 100%;
-  margin-top: 20px;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tabela th,
+.tabela td {
+  padding: 12px;
+  text-align: center;
+}
+
+.tabela th {
+  background-color: #2e7d32;
+}
+
+.tabela tr:nth-child(even) {
+  background: rgba(255,255,255,0.05);
+}
+
+.tabela tr:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* ================= CADASTRO ================= */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  color: white;
+}
+
+.container h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+/* FORM */
+.container form {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  background: rgba(255, 255, 255, 0.08);
+  padding: 25px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* LABEL */
+.container label {
+  font-size: 14px;
+  color: #a5d6a7;
+}
+
+/* INPUT */
+.container input {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+/* BOTÃO */
+.container button {
+  margin-top: 15px;
   padding: 12px;
   border: none;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #2e7d32, #66bb6a);
+  border-radius: 10px;
+  background: linear-gradient(135deg, #43a047, #66bb6a);
   color: white;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
 }
 
-button:hover {
+.container button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-
-/* link */
-p {
-  margin-top: 10px;
-  text-align: center;
-}
-
-a {
-  color: #2e7d32;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
