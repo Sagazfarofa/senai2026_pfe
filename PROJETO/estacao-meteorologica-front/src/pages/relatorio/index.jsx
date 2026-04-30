@@ -1,5 +1,5 @@
-
 import Header from "../../components/header";
+import GraficoBarra from "../../components/graficoBarra";
 
 export default function Relatorio() {
     const leituras = [
@@ -41,7 +41,7 @@ export default function Relatorio() {
             <p>Monitoramento da temperatura e umidade em tempo real</p>
 
             <section className="graficos">
-                {/* gráficos aqui */}
+                <GraficoBarra />
             </section>
 
             <section className="tabela">

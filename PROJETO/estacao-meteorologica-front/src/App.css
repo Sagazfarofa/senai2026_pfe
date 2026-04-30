@@ -249,3 +249,141 @@
 .tabela tr:hover {
     background-color: #f9fafb;
 }
+
+
+/* Graficos */
+.grafico-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 15px;
+  background: #1e1e2f;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.grafico-titulo {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.grafico-card {
+  padding: 15px;
+  border-radius: 10px;
+  background: #2a2a40;
+  border: 1px solid #3b3b55;
+}
+
+canvas {
+  max-height: 300px !important;
+}
+
+
+/* relatiório */
+
+.container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0f7a2f, #145c2a);
+  padding: 30px;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+/* Título principal */
+.container h2 {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.container p {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 50px;
+  opacity: 0.95;
+}
+
+/* Área do gráfico */
+.graficos {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.grafico-container {
+  width: 100%;
+  max-width: 750px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.grafico-card {
+  background: transparent;
+  border: none;
+}
+
+.grafico-titulo {
+  color: white;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+canvas {
+  max-height: 350px !important;
+}
+
+/* Tabela */
+.tabela {
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  width: 100%;
+  max-width: 900px;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+thead {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+th {
+  padding: 22px;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+}
+
+td {
+  padding: 20px;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+}
+
+tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+tbody tr:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transition: 0.3s;
+}
